@@ -1,0 +1,58 @@
+def to_roman(number)
+  new_array = []
+  romano_basic = {1 => "I",
+                  5 => "V",
+                  10 => "X",
+                  50 => "L",
+                  100 => "C",
+                  500 => "D",
+                  1000 => "M"}
+  romano_basic.key(romano_basic[number])
+  restante = number
+  if number < 4000
+    romano_basic.reverse_each do |keys,value|
+      while restante >= keys
+        if restante.to_s.chars.first(1).join.to_i == 9
+          if Math.log10(restante).to_i + 1 == 1
+            new_array << "IX"
+            restante -=  9
+          elsif Math.log10(restante).to_i + 1 == 2
+            new_array << "XC" 
+            restante -=  90  
+          elsif Math.log10(restante).to_i + 1 == 3
+            new_array << "CM" 
+            restante -=  900        
+          end
+        elsif restante.to_s.chars.first(1).join.to_i == 4 
+          if Math.log10(restante).to_i + 1 == 1
+            new_array << "IV"
+            restante -=  4
+          elsif Math.log10(restante).to_i + 1 == 2
+            new_array << "XL" 
+            restante -=  40  
+          elsif Math.log10(restante).to_i + 1 == 3
+             new_array <<"CD" 
+            restante -=  400        
+          end
+        else
+          #p restante.to_s.chars.first(1).join.to_i
+          new_array << romano_basic.values_at(keys)
+          restante -=  keys
+        end
+      end
+    end
+  else
+    puts "numero fuera de rango"
+  end
+  new_array.join
+end
+
+p to_roman(1) == "I"
+p to_roman(3) == "III"  
+p to_roman(4) == "IV"
+p to_roman(9) == "IX"
+p to_roman(13) == "XIII"
+p to_roman(14) == "XIV"
+p to_roman(944) == "CMXLIV"
+p to_roman(1453) == "MCDLIII"
+p to_roman(1646) == "MDCXLVI"
