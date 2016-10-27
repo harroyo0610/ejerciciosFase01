@@ -1,0 +1,26 @@
+def shuffle(array)
+  elements = array.length
+  new_array = []
+  i = 1
+  while i <= elements
+    numero = rand(array.min..array.max)
+    unless new_array.include? numero
+      new_array << numero
+    else
+      elements += 1
+    end
+  i += 1
+  end
+  #p elements
+  p new_array
+end
+
+
+# Driver code:
+array = (1..15).to_a
+shuffle(array)
+#Esto no deberá arrojar una excepción
+10.times do |variable|
+    raise "No esta revolviendo bien" if shuffle(array) == shuffle(array)
+end
+p true
