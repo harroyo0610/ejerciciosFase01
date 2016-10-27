@@ -1,0 +1,32 @@
+1, INICIO
+
+2, Declara la variable de tipo arreglo students
+
+3, Indroduce los valores a la variable students de la siguiente manera :
+
+  students = [[["Eliezer", 7], ["Mariam", 7], ["Deborah", 10], ["Harley", 7]],
+   [["D'angelo", 10], ["Brittany", 8], ["Hubert", 7], ["Erling", 9]],
+   [["Bradford", 7], ["Theodora", 10], ["Casandra", 9], ["Lindsay", 8]],
+   [["Hilma", 10], ["Lina", 10], ["Isabell", 8], ["Urban", 9]]]
+
+4, Declara la funcion best_students con el parametro students
+
+5, Declara dentro de la funcion creada un arreglo vacio llamado best_students
+
+6, declara las posiciones en x & y de la siguiente forma:
+  
+  x,y = 0,0
+
+7, Escribe un while donde la condicion sea que y < students.length
+
+8, Dentro del while declara la variable current_students es igual a students[x][y] (en funcion de x & y)
+
+9, Declara un if  donde, si current_student[1] == 10:
+  Entonces best_students.push(current_students[0])
+
+10, Afuera del if anterios declara un if donde si x == students[y].length-1
+  entonces  x = 0
+            y += 1
+  si no x += 1
+  
+11, Afuera de while regresa best_students.
