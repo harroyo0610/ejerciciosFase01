@@ -1,0 +1,20 @@
+def dic
+  array = []
+  puts "Escribe una palabra:"
+  word = gets.chomp
+    if word != ""
+      array.push(word)
+    end
+  while word != ""
+    puts 'Escribe otra palabra(o presiona "enter" para finalizar):'
+    word = gets.chomp
+    if word != ""
+      array.push(word)
+    end
+  end
+  array.sort_by do |word| 
+    word.downcase 
+  end
+end 
+
+puts dic
