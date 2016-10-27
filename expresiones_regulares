@@ -1,0 +1,40 @@
+class Cuenta 
+  def initialize(number)
+    @number = number
+  end
+
+  def cuenta?
+    if /./.match(@number)
+      p true
+    else 
+      p false
+    end
+  end
+
+  def numero_de_cuenta 
+      if /[0-9]/.match(@number)
+        p @number
+      else
+        p @number.class
+     end
+  end
+
+  def array_cuenta
+    p @number.scan(/\d{4}-\d{3}-\d{3}/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+  end
+
+  def siete_numeros
+    p @number.gsub(/\d{4}-\d{3}/, "xxxx-xxx")
+  end
+
+  def numero_formateado
+    p @number.gsub(/(\d{4})\.*(\d{3}).*(\d{3})/, "\1-\2-\3")
+  end
+end
+
+cuenta1 = Cuenta.new("1234-123-123")
+cuenta1.cuenta?
+cuenta1.numero_de_cuenta
+cuenta1.array_cuenta
+cuenta1.siete_numeros
+cuenta1.numero_formateado
