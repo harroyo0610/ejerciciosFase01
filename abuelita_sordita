@@ -1,0 +1,25 @@
+
+def deaf_grandma
+  puts "Dile algo  a la abuela, si te quieres ir dile bye tqm"
+  text = gets.chomp
+  while text != "bye tqm"
+    if text == text.upcase
+      gritar
+    else
+      hablar
+    end
+    puts "Dile algo  a la abuela, si te quieres ir dile BYE TQM"
+    text = gets.chomp
+  end 
+end
+def gritar
+  puts "NO, NO DESDE 1983"
+end
+def hablar
+  puts "HUH?! NO TE ESCUCHO, HIJO!"  
+end
+def preguntar
+  
+end
+
+deaf_grandma
